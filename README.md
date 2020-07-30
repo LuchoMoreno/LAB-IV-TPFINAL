@@ -1,3 +1,43 @@
+## :bulb: Usuarios del sistema
+
+
+### Administrador 
+- Email: lucho.moreno@live.com 
+- Password: xxxxxx
+
+
+### Recepcionista 
+- Email: claudia@recepcionista.com
+- Password: xxxxxx
+
+
+### Cliente 
+- Email: cosme@cliente.com
+- Password: xxxxxx
+
+
+### Especialista
+- Email: julieta@especialista.com
+- Password: xxxxxx
+
+
+### Especialista
+- Email: veronica@especialista.com
+- Password: xxxxxx
+
+
+### Especialista
+- Email: matias@especialista.com
+- Password: xxxxxx
+
+
+### Especialista
+- Email: natalia@especialista.com
+- Password: xxxxxx
+
+
+
+
 # TpFinal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
