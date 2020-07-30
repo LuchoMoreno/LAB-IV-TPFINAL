@@ -1,0 +1,119 @@
+
+
+
+
+
+
+<div *ngIf="listado.length != 0">
+
+
+    
+
+
+    <table mat-table [dataSource]="this.listado" class="mat-elevation-z8">
+    
+      
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Paciente </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre | uppercase}}</td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef> Codigo </th>
+        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef> Fecha </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaJSON}} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="horario">
+          <th mat-header-cell *matHeaderCellDef> Horario </th>
+          <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+    </ng-container>
+    
+    
+      <ng-container matColumnDef="accion">
+          <th mat-header-cell *matHeaderCellDef> Accion </th>
+
+
+
+          <td mat-cell *matCellDef="let element"> 
+
+            <div *ngIf = "element.estado == 'enEspera'">
+            <button mat-raised-button color="primary" style="margin-right:5px;" (click)="atenderPaciente(element.codigo, element.fechaJSON, element.hora)">Atender paciente</button>  
+            </div>
+
+
+            <div *ngIf = "element.estado == 'Atendiendo'">
+              <button mat-raised-button color="primary" style="margin-right:5px;" (click)="pacienteAtendido(element.codigo, element.fechaJSON, element.hora)">Finalizar</button>  
+            </div>
+
+            <div *ngIf = "element.estado == 'Atendido'">
+
+
+              <mat-toolbar color="transparent">
+                <mat-toolbar-row>
+              
+                  <button mat-raised-button color="warn" style="margin-right:5px;" (click)="desplegarCardResenia()">Cargar reseña</button>  
+                  <button [disabled]="!reseniaFormGroup.valid" mat-raised-button color="primary" style="margin-right:5px;" (click)="cargarResenia(element.codigo, element.fechaJSON, element.hora)"> Enviar reseña </button>  
+
+                </mat-toolbar-row>
+              </mat-toolbar>
+            
+            </div>
+
+
+            <div id="card" *ngIf="boolMostrarResenia == true">
+
+              <h2> Carga de reseña: </h2>
+              <form [formGroup]="reseniaFormGroup">
+                <div class="containerLogin">
+              
+    
+                    <mat-form-field appearance="fill">
+                      <mat-label>Reseña: </mat-label>
+            
+                      <input matInput placeholder="Ingrese su reseña" formControlName="reseniaValidada" [(ngModel)]="reseniaTexto">
+                     
+                      <mat-error *ngIf="reseniaFormGroup.controls.reseniaValidada.invalid"> Error con el formato de la reseña. Minimo 10 caracteres </mat-error>
+
+                    </mat-form-field>
+
+                </div>
+              </form>
+            </div>
+            
+
+          </td>
+
+
+        </ng-container>
+    
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    
+    
+    </table>
+    
+    
+    
+    </div>
+    
+
+
+    
+
+    

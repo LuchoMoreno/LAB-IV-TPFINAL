@@ -1,0 +1,72 @@
+<div *ngIf="listado.length != 0">
+
+
+
+<table mat-table [dataSource]="this.listado" class="mat-elevation-z8">
+
+  
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Paciente </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre | uppercase}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="codigo">
+    <th mat-header-cell *matHeaderCellDef> Codigo </th>
+    <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{element.fechaJSON}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="horario">
+      <th mat-header-cell *matHeaderCellDef> Horario </th>
+      <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+  </ng-container>
+
+
+  
+  <ng-container matColumnDef="estado">
+    <th mat-header-cell *matHeaderCellDef> Estado </th>
+    <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="especialista">
+      <th mat-header-cell *matHeaderCellDef> Nombre especialista </th>
+      <td mat-cell *matCellDef="let element"> {{element.especialista.nombre}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="accion">
+    <th mat-header-cell *matHeaderCellDef> Accion </th>
+
+
+
+    <td mat-cell *matCellDef="let element"> 
+
+      <div *ngIf = "element.estado == 'Finalizado' || element.estado == 'FinalizadoConEncuesta'">
+      <button mat-raised-button color="warn" style="margin-right:5px;" (click)="verMiReseniaDada(element.resenia)">Ver reseña</button>  
+      </div>
+
+    </td>
+
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+
+</table>
+
+
+</div>

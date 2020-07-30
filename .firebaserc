@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tpfinlab4": {
+      "hosting": {
+        "tpFinal": [
+          "tpfinlab4"
+        ]
+      }
+    }
+  }
+}

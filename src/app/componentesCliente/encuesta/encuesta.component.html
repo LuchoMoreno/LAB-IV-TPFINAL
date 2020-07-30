@@ -1,0 +1,119 @@
+<div *ngIf="listado.length != 0">
+
+    <br>
+    <button mat-raised-button color="primary" style="margin-right:5px;" (click)="desplegarCardEncuesta()">Cargar encuesta</button>  
+
+
+
+    <table mat-table [dataSource]="this.listado" class="mat-elevation-z8">
+    
+      
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Paciente </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre | uppercase}}</td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef> Codigo </th>
+        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef> Fecha </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaJSON}} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="horario">
+          <th mat-header-cell *matHeaderCellDef> Horario </th>
+          <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+      </ng-container>
+    
+    
+      
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+      </ng-container>
+    
+    
+    
+      <ng-container matColumnDef="especialista">
+          <th mat-header-cell *matHeaderCellDef> Nombre especialista </th>
+          <td mat-cell *matCellDef="let element"> {{element.especialista.nombre}} </td>
+      </ng-container>
+    
+    
+    
+      <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef> Accion </th>
+    
+    
+    
+        <td mat-cell *matCellDef="let element"> 
+    
+          <div *ngIf = "element.estado == 'Finalizado'">
+          <mat-toolbar color="transparent">
+            <mat-toolbar-row>
+          
+                <button [disabled]="!encuestaFormGroup.valid" mat-raised-button color="primary" style="margin-right:5px;" (click)="cargarEncuesta(element.codigo, element.fechaJSON, element.hora)"> Enviar reseña </button>  
+
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </div>
+
+
+
+        <div id="card" *ngIf="boolMostrarEncuesta == true">
+
+            <h2> Carga de reseña: </h2>
+            <form [formGroup]="encuestaFormGroup">
+              <div class="containerLogin">
+            
+                  <mat-form-field appearance="fill">
+                    <mat-label>Encuesta:</mat-label>
+          
+
+                    <div class="matSlider">
+                        <mat-label style="color: rgb(78, 62, 62); font-size: 17px;">Clinica</mat-label>
+                        <mat-slider [(ngModel)]="encuestaGeneradaJSON.satisfaccionClinica" formControlName='encuestaClinicaValidada' color="primary" class="example-full-width" thumbLabel  tickInterval="10" min="1" max="10"></mat-slider>
+                    </div>
+                
+
+                    <div class="matSlider">
+                        <mat-label style="color: rgb(78, 62, 62); font-size: 17px;">Especialista</mat-label>
+                        <mat-slider [(ngModel)]="encuestaGeneradaJSON.satisfaccionEspecialista" formControlName='encuestaEspecialistaValidada' color="primary" class="example-full-width" thumbLabel  tickInterval="10" min="1" max="10"></mat-slider>
+                    </div>
+
+
+                    <input matInput placeholder="Experiencia con nosotros" formControlName="encuestaValidada" [(ngModel)]="encuestaGeneradaJSON.encuestaTexto">
+                   
+                    <mat-error *ngIf="encuestaFormGroup.controls.encuestaValidada.invalid"> Error con el formato de la encuesta. Minimo 10 caracteres </mat-error>
+
+                  </mat-form-field>
+
+              </div>
+            </form>
+          </div>
+
+
+
+    
+        </td>
+    
+      </ng-container>
+    
+    
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    
+    
+    </table>
+    
+    
+    </div>
+    

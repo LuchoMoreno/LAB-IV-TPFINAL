@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+  
+      <button mat-button (click)="mostrarTurnoTelefono()"> Turno Telefónico </button>
+      <button mat-button (click)="mostrarCancelarTurno()"> Cancelar turnos </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <div *ngIf = "boolMostrarTurnoTelefo == true"> <!-- RECEPCIONISTA -->
+
+   <app-turno-telefo> </app-turno-telefo> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE DAR DE ALTA UN TURNO TELEFONICO COMO RECEPCIONISTA.-->
+
+  </div>
+
+
+  <div *ngIf = "boolMostrarCancelarTurnos == true"> <!-- RECEPCIONISTA -->
+
+    <app-cancelar-turno> </app-cancelar-turno> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE CANCELAR UN TURNO COMO RECEPCIONISTA.-->
+ 
+   </div>

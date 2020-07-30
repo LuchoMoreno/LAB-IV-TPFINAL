@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+  
+      <button mat-button (click)="mostrarSolicitarTurno()"> Solicitar turno </button>
+      <button mat-button (click)="mostrarVerTurnosPedidos()"> Ver mis turnos </button>
+      <button mat-button (click)="mostrarEncuesta()"> Encuesta </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <div *ngIf = "boolMostrarSolicitarTurno == true"> <!-- CLIENTE -->
+
+   <app-solicitar-turno></app-solicitar-turno> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE SOLICITAR UN TURNO COMO CLIENTE.-->
+
+  </div>
+
+
+  <div *ngIf = "boolMostrarVerMisTurnos == true"> <!-- CLIENTE -->
+
+    <app-ver-mis-turnos></app-ver-mis-turnos> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE VER MIS TURNOS COMO CLIENTE.-->
+ 
+   </div>
+
+
+   <div *ngIf = "boolMostrarEncuesta == true"> <!-- CLIENTE -->
+
+    <app-encuesta></app-encuesta> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE VER LAS ENCUESTAS COMO CLIENTE.-->
+ 
+   </div>
+

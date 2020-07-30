@@ -1,0 +1,34 @@
+<div *ngFor = "let cliente of listado">  
+
+
+
+
+<div class="container">
+
+        <div class="row">
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+                        <div class="our-team">
+
+                                <div class="picture">
+
+                                        <img class="img-fluid" [src]= "cliente.foto">
+                                </div>
+
+                                        <div class="team-content">
+                                        <h3 class="name">Nombre: {{cliente.nombre}} {{cliente.apellido}}</h3>
+                                        <h4 class="title">Tipo: {{cliente.tipo}}</h4>
+                                        <h4 class="title">Especialidad: {{cliente.especialidad}}</h4>
+                                        
+                                </div>
+
+                                <h4 class="title">Ingreso al sistema: {{cliente.ingreso}}</h4>
+                        </div>
+                </div>
+         </div>
+</div>
+
+
+  </div>
+

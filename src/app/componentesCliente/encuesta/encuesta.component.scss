@@ -1,0 +1,119 @@
+
+  table {
+    width: 100%;
+    font-family: 'Anton', sans-serif;
+    font-size: 600px;
+  }
+  
+  button{
+      width: 100%;
+  }
+  
+  
+// A PARTIR DE ACÁ ES TODO PARA LA RESEÑA
+
+
+// ESTO ME DA FORMATO A LA RESEÑA: 
+
+mat-form-field {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+
+
+
+
+// ESTO ME REEMPLAZA LA INFO DEL ESPECIALISTA.
+
+
+  body {
+    margin: 0 auto;
+    padding: 0;
+    background: #222;
+  }
+  
+  .left {
+    left: 25px;
+  }
+  
+  .right {
+    right: 25px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .bottom {
+    position: absolute;
+    bottom: 25px;
+  }
+  
+  #gradient {
+    background: #999955;
+    background-image: radial-gradient(circle, rgba(63,81,181,1) 0%, rgba(148,187,233,1) 100%);
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 100%;
+    height: 150px;
+  }
+  
+  #gradient:after {
+    content: "";
+    position: absolute;
+    background: #E9E2D0;
+    left: 50%;
+    margin-top: -67.5px;
+    margin-left: -270px;
+    padding-left: 20px;
+    border-radius: 5px;
+    width: 520px;
+    height: 275px;
+    z-index: -1;
+  }
+  
+  #card {
+
+    position: absolute;
+    width: 450px;
+    height: 225px;
+    padding: 25px;
+    padding-top: 5;
+    padding-bottom: 0;
+    left: 50%;
+    top: 100px;
+    margin-left: -250px;
+    background: #E9E2D0;
+    box-shadow: -20px 0 35px -25px black, 20px 0 35px -25px black;
+    z-index: 5;
+    border-style: dashed;
+    border: 4px dotted rgba(63,81,181,1);
+  }
+  
+  #card img {
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  #card h2 {
+    color: #333;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 15pt;
+  }
+  
+  #card p {
+    color: #555;
+    font-size: 13px;
+  }
+  
+  #card span {
+    font-family: courier;
+  }

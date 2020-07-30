@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+html { 
+
+    background: url("https://i.imgur.com/xB3QyUn.jpg");     
+    background-attachment: fixed;     
+    background-repeat: no-repeat;     
+    background-size: 100% 100%;
+  }
+
+  @import '@angular/material/prebuilt-themes/indigo-pink.css';
+  

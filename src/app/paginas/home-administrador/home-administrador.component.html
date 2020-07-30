@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+  
+      <button mat-button (click)="mostrarGenerarAlta()"> Alta </button>
+      <button mat-button (click)="mostrarEmpleadosAdmin()"> Empleados</button>
+      <button mat-button (click)="mostrarTurnosRealizados()"> Turnos realizados </button>
+      <button mat-button (click)="mostrarTurnosPorEspecialidad()"> Especialidades Mas/Menus usadas </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <div *ngIf = "boolMostrarGenerarAlta == true"> <!-- ADMINISTRADOR -->
+
+   <app-alta-admin></app-alta-admin> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE HACER ALTAS COMO ADMINISTRADOR.-->
+
+  </div>
+
+
+  <div *ngIf = "boolMostrarEmpleadosAdmin == true"> <!-- ADMINISTRADOR -->
+
+    <app-empleados-admin></app-empleados-admin> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE VER LOS EMPLEADOS COMO ADMINISTRADOR.-->
+ 
+   </div>
+
+
+   <div *ngIf = "boolMostrarTurnosPorEspecialidad == true"> <!-- ADMINISTRADOR -->
+
+    <app-turnos-por-especialidad> </app-turnos-por-especialidad> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE VER LOS TURNOS POR ESPECIALIDAD COMO ADMINISTRADOR.-->
+ 
+   </div>
+
+
+
+   <div *ngIf = "boolMostrarTurnosRealizados == true"> <!-- ADMINISTRADOR -->
+
+    <app-turnos-realizados> </app-turnos-realizados> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE VER LOS TURNOS COMO ADMINISTRADOR.-->
+ 
+   </div>
+
+

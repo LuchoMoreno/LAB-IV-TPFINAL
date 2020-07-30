@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-button (click)="mostrarMisTurnosEspecialista()"> Mis Turnos </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <div *ngIf = "boolMostrarMisTurnosEspecialista == true"> <!-- ESPECIALISTA -->
+
+  <app-ver-mis-turnos-especialista> </app-ver-mis-turnos-especialista> <!-- ESTO ES EL COMPONENTE QUE ME PERMITE VER MIS TURNOS COMO ESPECIALISTA.-->
+
+  </div>
+
+
+

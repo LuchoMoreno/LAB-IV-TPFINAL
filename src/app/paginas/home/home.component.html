@@ -1,0 +1,38 @@
+<div id="gradient"></div>
+<div id="card">
+  <img [src]="fotoUsuario"/>
+  <h2> B I E N V E N I D O</h2>
+  <p>Nombre: {{nombreUsuario}} </p> 
+  <p>Apellido: {{apellidoUsuario}} </p> 
+  <p>Correo: {{correoUsuario}} </p> 
+  <p>Usted es un: {{tipoUsuario}} </p> 
+  <span class="left bottom">DNI: {{DNIUsuario}}</span>
+
+  <div *ngIf = "tipoUsuario == 'Especialista'">
+  <span class="right bottom">Especialidad: {{especialidadUsuario}}</span>
+  </div>
+  
+</div>
+
+
+<br><br><br><br><br><br>
+
+<div *ngIf = "tipoUsuario == 'Cliente'">
+<app-home-cliente> </app-home-cliente>
+</div>
+
+
+<div *ngIf = "tipoUsuario == 'Administrador'">
+  <app-home-administrador> </app-home-administrador>
+</div>
+  
+
+<div *ngIf = "tipoUsuario == 'Especialista'">
+  <app-home-especialista> </app-home-especialista>
+</div>
+
+
+<div *ngIf = "tipoUsuario == 'Recepcionista'">
+  <app-home-recepcionista> </app-home-recepcionista>
+</div>
+

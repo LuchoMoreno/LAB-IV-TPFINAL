@@ -1,0 +1,34 @@
+table {
+    width: 100%;
+    font-family: 'Anton', sans-serif;
+    font-size: 600px;
+  }
+  
+  button{
+      width: 100%;
+  }
+  
+
+   // ERROR
+
+
+
+.mainbox {
+    top: 20px;
+    background-color: #95c2de;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+   position: relative;
+  }
+  
+  .msg {
+      text-align: center;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1.6rem;
+      position:absolute;
+      left: 16%;
+      top: 45%;
+      width: 75%;
+    }
+  
